@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Locations = () => {
+const Options = () => {
   return (
-     <div className="locations">
-       <div className="locations-text">Locations
+     <div className="options">
+       <div className="options-text">Locations
          <div className="fa fa-info-circle" aria-hidden="true"></div>
        </div>
         <select className="form-select">
@@ -12,10 +12,10 @@ const Locations = () => {
             <option>People recently in this location</option>
             <option>People traveling in this location</option>
         </select>
-      <div className="location-selector">
+      <div className="options-selector">
       </div>
      </div>
   )
 }
 
-export default Locations
+export default Options

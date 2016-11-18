@@ -1,10 +1,8 @@
 import React from 'react'
 
-import { Buttons, Buttongroups, Tabindex } from "@blueprintjs/core";
-
-const AgeGender = () => {
+const AgeGenderLanguages = () => {
   return (
-    <div className="agegender-container">
+    <div className="agegenderlang-container">
 
      <div className="age-container">
         <div className="description">Age
@@ -41,4 +39,4 @@ const AgeGender = () => {
   )
 }
 
-export default AgeGender
+export default AgeGenderLanguages

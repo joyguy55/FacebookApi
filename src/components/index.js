@@ -1,9 +1,8 @@
 import React from 'react'
 
-import StateInput from './geolocation/stateinput.js'
-import AgeGender from './agegender.js'
-import Locations from './locations.js'
-// import CustomAudience from './custom-audience.js'
+import CustomAudience from './custom-audience.js'
+import Locations from './locations/index.js'
+import AgeGenderLanguages from './agegenderlanguages.js'
 
 import styles from './style.scss'
 
@@ -24,7 +23,7 @@ const Facebook = () => {
       </div>
       <div className="break-line1"></div>
         <Locations/>
-        <AgeGender/>
+        <AgeGenderLanguages/>
     </div>
   )
 }
