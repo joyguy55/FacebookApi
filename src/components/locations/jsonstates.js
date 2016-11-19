@@ -242,4 +242,8 @@
    return {...obj, country: country}
   })
 
-export default newStates
+const justStates = States.map((obj)=>{
+    return obj.name
+})
+
+export default justStates

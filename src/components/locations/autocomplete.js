@@ -3,7 +3,7 @@ import React from 'react';
 const AutoComplete = (props) =>{
     return(
       <div className="form-autocomplete">
-         { props.locations === [] ? null :
+         { props.locations === [] ? '' :
           <ul className="Selections">
             {
               props.locations.map((location)=>{
@@ -13,11 +13,11 @@ const AutoComplete = (props) =>{
           </ul>
          }
         <input className="form-input" type="text" onChange={props.handleChange} placeholder="Add Location" />
-         { props.suggestions === [] ? null :
+         { props.suggestions === [] ? '' :
           <ul className="form-autocomplete-list Suggestions">
             {
-              props.suggestions.map((suggestion)=>{
-                return(<li className="form-autocomplete-item">{suggestion}</li>)
+              props.suggestions.map((suggestion,index)=>{
+                return(<li key={index} className="form-autocomplete-item">{suggestion}</li>)
               })
             }
           </ul>
