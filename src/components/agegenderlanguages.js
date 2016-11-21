@@ -9,11 +9,11 @@ const AgeGenderLanguages = () => {
           <div className="fa fa-info-circle" aria-hidden="true"></div>
         </div>
         <input className="form-input col-sm-3 float-right" type="number" placeholder="Max"
-                min="0" max="120"
-                defaultValue={120}/>
+                min="0" max="100"
+                defaultValue={90}/>
         <span className="float-right col-sm-1 text-center">{'‐'}</span>
         <input className="form-input col-sm-3 float-right" type="number" placeholder="Min"
-                min="0" max="120"
+                min="0" max="100"
                 defaultValue={0}/>
       </div>
 

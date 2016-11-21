@@ -22,8 +22,10 @@ const Facebook = () => {
          </ul>
       </div>
       <div className="break-line1"></div>
+      <div className="locations-container">
         <Locations/>
         <AgeGenderLanguages/>
+      </div>
     </div>
   )
 }

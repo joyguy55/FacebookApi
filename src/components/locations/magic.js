@@ -1,5 +1,5 @@
 const Score = (match, words, fuzziness) => {
-'use strict';
+
 
 
   // If the string is equal to the word, perfect match.
