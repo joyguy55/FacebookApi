@@ -2,9 +2,10 @@
 .regions{
 
   .form-autocomplete{
-    width: 300px;
+    width: 400px;
     float: right;
-    margin: 0px 70px 20px 0px;
+    margin: 0px 25px 20px 0px;
+    margin-top: 10px;
     .selections{
       list-style: none;
       background: #fff;
@@ -12,7 +13,7 @@
       border-bottom: 0;
       border-radius: .3rem;
       padding: 0px 10px 6px 10px;
-      margin: 20px 0px 0px 0px;
+      margin: 10px 0px 0px 0px;
       .fa-map-marker{
         margin-right: 10px;
       }

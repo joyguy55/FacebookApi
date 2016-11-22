@@ -6,15 +6,18 @@ import AutoComplete from './autocomplete.js'
 import styles from './style.scss'
 import Score from './magic.js'
 
+const locationSet = new Set()
+
 class Locations extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
       inputValue: '',
       suggestions: [],
-      locations: [],
+      locations: locationSet,
     }
   }
+
 
   handleAddSuggestions(arr,input){
 
@@ -31,7 +34,7 @@ class Locations extends React.Component{
     for(let location of this.state.locations){
       searchSet.delete(location)
     }
-
+    console.log(this.state.locations)
     this.setState({suggestions : searchSet})
   }
 
@@ -40,8 +43,9 @@ class Locations extends React.Component{
     searchValue === '' ? this.setState({suggestions: []}) : null
   }
 
-  handleLocations(locationValue){
-    this.setState({locations:[...this.state.locations, locationValue]})
+  handleLocations(location){
+    locationSet.add(location)
+    this.setState({locations: locationSet})
   }
 
   handleChange(e){
@@ -50,10 +54,9 @@ class Locations extends React.Component{
     this.handleinputValueChange(value)
   }
 
-  subtractLocation(subtract){
-    console.log(subtract)
-    const setLocation = new Set(this.state.locations)
-    setLocation.delete(subtract)
+  subtractLocation(location){
+    locationSet.delete(location)
+    this.setState({locations: locationSet})
   }
 
   render(){
@@ -65,7 +68,7 @@ class Locations extends React.Component{
             handleChange={this.handleChange.bind(this)}
             locations={this.state.locations}
             suggestions={this.state.suggestions}
-            subtractLocation={this.subtractLocation}
+            subtractLocation={this.subtractLocation.bind(this)}
           />
        </div>
     )

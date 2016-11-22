@@ -3,11 +3,11 @@ import React from 'react';
 const AutoComplete = (props) =>{
 
     const handleSearch = (suggestion) => {
-     props.handleLocations(suggestion)
+      props.handleLocations(suggestion)
     }
 
-    const handleSubtract = (subtract) => {
-     props.subtractLocation(subtract)
+    const handleSubtract = (location) => {
+      props.subtractLocation(location)
     }
 
     const arrSuggestions = Array.from(props.suggestions)
@@ -16,10 +16,10 @@ const AutoComplete = (props) =>{
 
     return(
       <div className="form-autocomplete">
-         { props.locations === [] ? null :
+         { arrLocations.length > 0 && (
           <ul className="selections">
             {
-              props.locations.map((location,index)=>{
+              arrLocations.map((location,index)=>{
                 return(<li key={index}>
                         <i className="fa fa-map-marker"></i>
                         {location}
@@ -29,7 +29,7 @@ const AutoComplete = (props) =>{
               })
             }
           </ul>
-         }
+         )}
 
         <input className="form-input" type="text" onChange={props.handleChange} placeholder="Add Location" />
         { arrSuggestions.length > 0 && (

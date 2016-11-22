@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import Facebook from './components/index.js'
 import './index.scss';
 
