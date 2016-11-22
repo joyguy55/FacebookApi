@@ -6,23 +6,36 @@ const AutoComplete = (props) =>{
      props.handleLocations(suggestion)
     }
 
+    const handleSubtract = (subtract) => {
+     props.subtractLocation(subtract)
+    }
+
+    const arrSuggestions = Array.from(props.suggestions)
+
+    const arrLocations = Array.from(props.locations)
+
     return(
       <div className="form-autocomplete">
          { props.locations === [] ? null :
-          <ul className="Selections">
+          <ul className="selections">
             {
               props.locations.map((location,index)=>{
-                return(<li key={index}>{location}</li>)
+                return(<li key={index}>
+                        <i className="fa fa-map-marker"></i>
+                        {location}
+                        <i className="fa fa-times" onClick={()=>{handleSubtract(location)}}></i>
+                      </li>
+                )
               })
             }
           </ul>
          }
 
         <input className="form-input" type="text" onChange={props.handleChange} placeholder="Add Location" />
-        { props.suggestions.length > 0 && (
+        { arrSuggestions.length > 0 && (
             <ul className="form-autocomplete-list Suggestions">
               {
-                props.suggestions.map((suggestion,index)=>{
+                arrSuggestions.map((suggestion,index)=>{
                   return(<li key={index} className="form-autocomplete-item" onClick={()=>{handleSearch(suggestion)}}>{suggestion}</li>)
                 })
               }

@@ -22,17 +22,17 @@ class Locations extends React.Component{
       return Score(input, word, .1)
     })
 
-    const addSuggestions = []
-    const locationSet =  new Set()
-    for(let i = 0; i<this.state.locations.length; i++){
-      locationSet.add(this.state.locations[i])
-    }
-    console.log(locationSet)
+    const searchSet =  new Set(this.state.suggestions)
+
     for(let i = 0; i<arr.length; i++){
-      newArr[i]>=.2 && !locationSet.has(newArr[i]) ? addSuggestions.push(arr[i]) : null
+        newArr[i]>=.2 && searchSet.add(arr[i])
     }
 
-    this.setState({suggestions : addSuggestions})
+    for(let location of this.state.locations){
+      searchSet.delete(location)
+    }
+
+    this.setState({suggestions : searchSet})
   }
 
   handleinputValueChange(searchValue){
@@ -50,15 +50,22 @@ class Locations extends React.Component{
     this.handleinputValueChange(value)
   }
 
+  subtractLocation(subtract){
+    console.log(subtract)
+    const setLocation = new Set(this.state.locations)
+    setLocation.delete(subtract)
+  }
+
   render(){
     return (
-       <div>
+       <div className="regions">
           <Options/>
           <AutoComplete
             handleLocations={this.handleLocations.bind(this)}
             handleChange={this.handleChange.bind(this)}
             locations={this.state.locations}
             suggestions={this.state.suggestions}
+            subtractLocation={this.subtractLocation}
           />
        </div>
     )

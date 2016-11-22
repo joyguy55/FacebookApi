@@ -1,6 +1,25 @@
 
-.form-autocomplete{
-  width: 300px;
-  float: right;
-  margin: 0px 70px 30px 0px;
+.regions{
+
+  .form-autocomplete{
+    width: 300px;
+    float: right;
+    margin: 0px 70px 20px 0px;
+    .selections{
+      list-style: none;
+      background: #fff;
+      border: .1rem solid #c5c5c5;
+      border-bottom: 0;
+      border-radius: .3rem;
+      padding: 0px 10px 6px 10px;
+      margin: 20px 0px 0px 0px;
+      .fa-map-marker{
+        margin-right: 10px;
+      }
+      .fa-times{
+        float: right;
+      }
+    }
+  }
+
 }
