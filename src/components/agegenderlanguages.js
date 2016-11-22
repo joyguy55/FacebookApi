@@ -39,4 +39,4 @@ const AgeGenderLanguages = () => {
   )
 }
 
-export default connnect()(AgeGenderLanguages)
+export default AgeGenderLanguages
