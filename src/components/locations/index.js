@@ -6,6 +6,10 @@ import AutoComplete from './autocomplete.js'
 import styles from './style.scss'
 import Score from './magic.js'
 
+import { connect , dispatch } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import * as actions from '../../redux/actions/index.js'
+
 const locationSet = new Set()
 
 class Locations extends React.Component{
@@ -34,7 +38,6 @@ class Locations extends React.Component{
     for(let location of this.state.locations){
       searchSet.delete(location)
     }
-    console.log(this.state.locations)
     this.setState({suggestions : searchSet})
   }
 
@@ -46,6 +49,8 @@ class Locations extends React.Component{
   handleLocations(location){
     locationSet.add(location)
     this.setState({locations: locationSet})
+    const stateArr = [...this.state.locations]
+    this.props.addLocation(stateArr)
   }
 
   handleChange(e){
@@ -73,6 +78,12 @@ class Locations extends React.Component{
        </div>
     )
   }
+
 }
 
-export default Locations
+export default connect(
+  function mapStateToProps(state){
+    return state},
+  function mapDispatchToProps(dispatch){
+    return bindActionCreators(actions, dispatch)},
+)(Locations)

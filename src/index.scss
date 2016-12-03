@@ -1,48 +1,48 @@
-html {
+html  {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*, *:before, *:after  {
   box-sizing: inherit;
 }
 
-body{
+body {
   background: #e9ebee !important;
   font-family: Helvetica, Arial, Lucida Grande, sans-serif;
 }
-.app-container{
+.app-container {
   background: white;
   max-width: 659px;
   // height: 500px;
   margin: 25px;
-  .header{
+  .header {
     padding: 20px 15px 0px 20px;
-    .head-title{
+    .head-title {
       font-size: 14px;
       line-height: 18px;
       font-weight: bold;
     }
-    span{
+    span {
       margin-top: 3px;
       font-size: 12px;
       color: #90949c;
     }
-    p{
+    p {
       display: inline-block;
     }
-    ul{
+    ul {
       margin: 33px 0px .5px 20px;
     }
-    .tab{
+    .tab {
       width: 300px;
     }
   }
-  .break-line1{
+  .break-line1 {
     background: #d9d9d9;
     border-width: 0;
     color: #d9d9d9;
     height: 1px;
     clear: both;
-    &:last-child{
+    &:last-child {
 
     }
   }

@@ -1,12 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
-import facebookApp from './reducers/index.js'
 import App from './App'
 import './index.scss'
-
-let store = createStore(facebookApp)
+import store from './redux/store.js'
 
 ReactDOM.render(
   <Provider store={store}>
